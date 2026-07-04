@@ -1,0 +1,9 @@
+{
+  "name": "memoria-ativa",
+  "version": "1.0.0",
+  "description": "Assistente pessoal de acessibilidade para idosos em reuniões e assembleias.",
+  "private": true,
+  "scripts": {
+    "dev": "vercel dev"
+  }
+}
