@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Memória Ativa — seu apoio em reuniões e assembleias</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Editor de texto Quill (gratuito) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.7/quill.snow.min.css" rel="stylesheet" />
+</head>
+<body>
+
+  <header class="topo">
+    <div class="marca">
+      <span class="marca-icone" aria-hidden="true">🧠</span>
+      <div>
+        <h1>Memória Ativa</h1>
+        <p class="subtitulo">Seu apoio para acompanhar reuniões e assembleias</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="conteudo">
+
+    <!-- ETAPA 1: GRAVAR OU IMPORTAR -->
+    <section class="cartao" id="secao-audio">
+      <h2><span aria-hidden="true">1️⃣</span> Capture o áudio da reunião</h2>
+      <p class="ajuda">Aperte o botão para gravar pelo microfone, ou envie um arquivo de áudio que você já tenha.</p>
+
+      <div class="botoes-audio">
+        <button id="btn-gravar" class="botao-grande botao-azul" type="button">
+          <span class="botao-icone" aria-hidden="true">🎤</span>
+          <span id="texto-gravar">Gravar áudio</span>
+        </button>
+
+        <label class="botao-grande botao-verde botao-arquivo" for="input-arquivo">
+          <span class="botao-icone" aria-hidden="true">📁</span>
+          <span>Importar arquivo (MP3/WAV)</span>
+        </label>
+        <input type="file" id="input-arquivo" accept=".mp3,.wav,audio/*" hidden />
+      </div>
+
+      <p id="status-audio" class="status" role="status" aria-live="polite"></p>
+      <audio id="player-audio" controls hidden></audio>
+    </section>
+
+    <!-- ETAPA 2: TEXTO / TRANSCRIÇÃO -->
+    <section class="cartao" id="secao-texto">
+      <h2><span aria-hidden="true">2️⃣</span> Texto da reunião</h2>
+      <p class="ajuda">O texto falado aparece aqui. Você pode corrigir qualquer palavra clicando e digitando.</p>
+
+      <div class="barra-formatacao" id="barra-formatacao"></div>
+      <div id="editor-quill"></div>
+
+      <div class="botoes-acao">
+        <button id="btn-resumir" class="botao-grande botao-azul" type="button">
+          <span class="botao-icone" aria-hidden="true">🤖</span>
+          <span>Resumir com IA</span>
+        </button>
+        <button id="btn-salvar" class="botao-grande botao-verde" type="button">
+          <span class="botao-icone" aria-hidden="true">💾</span>
+          <span>Salvar no histórico</span>
+        </button>
+      </div>
+
+      <p id="status-ia" class="status" role="status" aria-live="polite"></p>
+    </section>
+
+    <!-- ETAPA 3: HISTÓRICO -->
+    <section class="cartao" id="secao-historico">
+      <h2><span aria-hidden="true">3️⃣</span> Reuniões salvas</h2>
+      <p class="ajuda">Aqui ficam guardados os resumos das reuniões anteriores.</p>
+      <button id="btn-atualizar-historico" class="botao-pequeno" type="button">🔄 Atualizar lista</button>
+      <ul id="lista-historico" class="lista-historico"></ul>
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    <p>Memória Ativa — feito para te ajudar a lembrar do que importa. 💙</p>
+  </footer>
+
+  <!-- Bibliotecas gratuitas via CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.7/quill.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

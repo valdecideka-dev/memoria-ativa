@@ -1,0 +1,241 @@
+/* ===================================================================
+   MEMÓRIA ATIVA — estilos
+   Paleta: fundo off-white, azul claro (#4A90E2) e verde suave,
+   texto escuro, botões grandes e arredondados (acessibilidade sênior)
+   =================================================================== */
+
+:root {
+  --cor-fundo: #FAF8F4;
+  --cor-cartao: #FFFFFF;
+  --cor-texto: #2B2B2B;
+  --cor-texto-suave: #555555;
+  --cor-azul: #4A90E2;
+  --cor-azul-escuro: #3A73B5;
+  --cor-verde: #6FBF8B;
+  --cor-verde-escuro: #55A473;
+  --cor-borda: #E3DFD6;
+  --sombra: 0 4px 14px rgba(0, 0, 0, 0.07);
+  --raio: 18px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Verdana, Arial, sans-serif;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+/* ---------- Cabeçalho ---------- */
+.topo {
+  background: var(--cor-cartao);
+  border-bottom: 1px solid var(--cor-borda);
+  padding: 24px 20px;
+}
+
+.marca {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.marca-icone {
+  font-size: 48px;
+  line-height: 1;
+}
+
+.marca h1 {
+  margin: 0;
+  font-size: 32px;
+  color: var(--cor-azul-escuro);
+}
+
+.subtitulo {
+  margin: 4px 0 0;
+  color: var(--cor-texto-suave);
+  font-size: 18px;
+}
+
+/* ---------- Layout geral ---------- */
+.conteudo {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 20px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.cartao {
+  background: var(--cor-cartao);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  padding: 28px;
+}
+
+.cartao h2 {
+  margin-top: 0;
+  font-size: 24px;
+  color: var(--cor-texto);
+}
+
+.ajuda {
+  color: var(--cor-texto-suave);
+  font-size: 18px;
+  margin-top: 4px;
+}
+
+/* ---------- Botões grandes ---------- */
+.botoes-audio,
+.botoes-acao {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.botao-grande {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 60px;
+  padding: 14px 28px;
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  color: #FFFFFF;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.botao-grande:hover { filter: brightness(1.05); }
+.botao-grande:active { transform: scale(0.98); }
+.botao-grande:focus-visible {
+  outline: 3px solid #1E3A5F;
+  outline-offset: 3px;
+}
+
+.botao-icone { font-size: 26px; }
+
+.botao-azul  { background: var(--cor-azul); }
+.botao-azul:hover { background: var(--cor-azul-escuro); }
+
+.botao-verde { background: var(--cor-verde); }
+.botao-verde:hover { background: var(--cor-verde-escuro); }
+
+.botao-arquivo { cursor: pointer; }
+
+.botao-pequeno {
+  min-height: 44px;
+  padding: 8px 18px;
+  font-size: 16px;
+  border-radius: 999px;
+  border: 1px solid var(--cor-borda);
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+/* Estado "gravando" — o único movimento de destaque da tela,
+   um pulso suave que avisa: "estou te ouvindo". */
+.botao-azul.gravando {
+  background: #D64545;
+  animation: pulso 1.4s ease-in-out infinite;
+}
+@keyframes pulso {
+  0%   { box-shadow: 0 0 0 0 rgba(214, 69, 69, 0.45); }
+  70%  { box-shadow: 0 0 0 18px rgba(214, 69, 69, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(214, 69, 69, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .botao-azul.gravando { animation: none; }
+}
+
+/* ---------- Status / feedback ---------- */
+.status {
+  margin-top: 14px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--cor-azul-escuro);
+  min-height: 24px;
+}
+
+/* ---------- Editor Quill ---------- */
+.barra-formatacao { margin-top: 10px; }
+
+#editor-quill {
+  background: #FFFFFF;
+  min-height: 220px;
+  font-size: 20px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.ql-toolbar.ql-snow {
+  border-radius: 12px 12px 0 0;
+  background: #F1EEE7;
+}
+
+.ql-container.ql-snow {
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  font-size: 20px;
+}
+
+/* ---------- Histórico ---------- */
+.lista-historico {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.item-historico {
+  border: 1px solid var(--cor-borda);
+  border-radius: 12px;
+  padding: 16px 18px;
+  background: var(--cor-fundo);
+}
+
+.item-historico strong { display: block; font-size: 18px; margin-bottom: 4px; }
+.item-historico span { color: var(--cor-texto-suave); font-size: 16px; }
+
+.item-historico button {
+  margin-top: 10px;
+  border: none;
+  background: var(--cor-azul);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+/* ---------- Rodapé ---------- */
+.rodape {
+  text-align: center;
+  padding: 24px;
+  color: var(--cor-texto-suave);
+  font-size: 16px;
+}
+
+/* ---------- Responsivo (tablets) ---------- */
+@media (max-width: 640px) {
+  body { font-size: 18px; }
+  .marca h1 { font-size: 26px; }
+  .botao-grande { width: 100%; }
+  .botoes-audio, .botoes-acao { flex-direction: column; }
+}
