@@ -1,6 +1,6 @@
 # 🧠 Memória Ativa
 
-Um assistente pessoal, simples e gratuito, para ajudar a acompanhar reuniões e assembleias: grava, transcreve, resume com Inteligência Artificial e deixa você formatar o texto do seu jeito.
+ "!" Um assistente pessoal, simples e gratuito, para ajudar a acompanhar reuniões e assembleias: grava, transcreve, resume com Inteligência Artificial e deixa você formatar o texto do seu jeito.
 
 Este guia foi escrito como se você estivesse abrindo um computador pela primeira vez. Vá com calma, passo a passo, sem pular nenhum.
 
