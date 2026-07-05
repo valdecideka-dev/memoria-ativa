@@ -11,6 +11,6 @@
 // ============================================================
 
 window.MEMORIA_ATIVA_CONFIG = {
-  SUPABASE_URL: "COLE_AQUI_A_URL_DO_SEU_PROJETO_SUPABASE",
-  SUPABASE_ANON_KEY: "COLE_AQUI_A_CHAVE_ANON_PUBLIC_DO_SUPABASE"
+  SUPABASE_URL: "https://urwwwnitehzdadqdjnur.supabase.co",
+  SUPABASE_ANON_KEY: "sb_publishable_p2AFYteSlhtk1duF7CbH7g_8Tgg5may"
 };
